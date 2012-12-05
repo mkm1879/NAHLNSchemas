@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+    <xsd:include schemaLocation="NAHLNResultBasev1_0_7.xsd"/>
+    <xsd:element name="OPU_R25_Wrapper">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="OPU_R25" minOccurs="1" maxOccurs="unbounded" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
