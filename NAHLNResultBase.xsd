@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ******* Version 1_0_8_0 of the NAHLN Base Result Schema ******* -->
+<!-- ******* Version 1_0_9_0 of the NAHLN Base Result Schema ******* -->
 <!--
 This is the basic schema for all NAHLN laboratory results messages.  
 It includes all fields that we anticipate needing in any of the disease 
@@ -7,9 +7,10 @@ program or surveillance testing.  It requires only the minimum needed
 for all types of testing.	
 -->
 
- <!-- 10/06/2010 - 1_0_7_0 Changes include:
- Update to OID regex to support CSF ELISA results
- Maintenance changes to the PID.38 enumerations to remain in sync with VTU Terminology 
+ <!-- 10/06/2010 - 1_0_9_0 Changes include:
+ Various backward compatible changes found in developing SIV message examples.
+ Relaxed a number of constraints.  
+ May expand enumeration of Reason for Testing (TBD) 
  -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:hl7="urn:hl7-org:v2xml">
 	<xsd:simpleType name="OID">
@@ -232,6 +233,14 @@ for all types of testing.
 			<xsd:minLength value="1"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:simpleType name="SCTor371">
+		<!-- Snomed Coding System or HL7 Table of Additives -->
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="SCT"/>
+			<xsd:enumeration value="HL70371"/>
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<xsd:simpleType name="Local">
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="L"/>
@@ -324,7 +333,7 @@ for all types of testing.
 						<xsd:sequence>
 							<!-- NAHLN Application Abbrev -->
 							<xsd:element name="HD.1" type="nonNullString"/>
-							<!-- Lab OID or Lab NAHLN Application OID -->
+							<!-- Lab OID or Lab NAHLN Applications OID -->
 							<xsd:element name="HD.2" type="OID"/>
 							<!-- NAHLN Constant ISO -->
 							<xsd:element name="HD.3" type="ISO"/>
@@ -603,7 +612,7 @@ for all types of testing.
 							</xsd:element>
 							<!-- Spelled out role "Submitting Party", "Specimen Collector", "Source Premises", etc. -->
 							<xsd:element name="CWE.2" type="xsd:string" minOccurs="0" nillable="true"/>
-							<!-- NAHLN Constant "L" Local code -->
+							<!-- NAHLN "HL70443" or "L" Local code -->
 							<xsd:element name="CWE.3" type="nonNullString"/>
 						</xsd:sequence>
 					</xsd:complexType>
@@ -617,7 +626,7 @@ for all types of testing.
 							<xsd:element name="XCN.2">
 								<xsd:complexType>
 									<xsd:sequence>
-										<!-- Last Name ("Not Applicable" for Premises) -->
+										<!-- Last Name ("Not Applicable" ("NA") for Premises) -->
 										<xsd:element name="FN.1">
 											<xsd:simpleType>
 												<xsd:restriction base="nonNullString">
@@ -648,11 +657,12 @@ for all types of testing.
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-				<!-- Address -->
+				<!-- Address: Note: this is a very loose constraint on XAD to allow
+				     sending of just State or just Other Designation, etc. -->
 				<xsd:element name="ROL.11" minOccurs="0" nillable="true">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xsd:element name="XAD.1">
+							<xsd:element name="XAD.1" minOccurs="0">
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Street Address -->
@@ -665,13 +675,15 @@ for all types of testing.
 							<!-- Other designation -->
 							<xsd:element name="XAD.2" type="xsd:string" minOccurs="0" nillable="true"/>
 							<!-- City -->
-							<xsd:element name="XAD.3" type="nonNullString"/>
+							<xsd:element name="XAD.3" type="nonNullString" minOccurs="0"/>
 							<!-- State (Two character abbreviation) -->
-							<xsd:element name="XAD.4" type="StateCode"/>
+							<xsd:element name="XAD.4" type="StateCode"  minOccurs="0"/>
 							<!-- Zipcode -->
-							<xsd:element name="XAD.5" type="nonNullString"/>
-							<!-- Premises ID for PREM role only -->
+							<xsd:element name="XAD.5" type="nonNullString" minOccurs="0"/>
+							<!-- Other designation such as Lat Long (in ROL, use PL.10 for PINs -->
 							<xsd:element name="XAD.8" type="xsd:string" minOccurs="0" nillable="true"/>
+							<!-- County -->
+							<xsd:element name="XAD.9" type="xsd:string" minOccurs="0" nillable="true"/>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
@@ -838,7 +850,7 @@ for all types of testing.
 					</xsd:complexType>
 				</xsd:element>
 				<!-- Relationship -->
-				<xsd:element name="NK1.3">
+				<xsd:element name="NK1.3" minOccurs="0">
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- NAHLN default "OWN" -->
@@ -891,8 +903,10 @@ for all types of testing.
 							<xsd:element name="XAD.4" type="StateCode" minOccurs="0" nillable="true"/>
 							<!-- Zipcode -->
 							<xsd:element name="XAD.5" type="xsd:string" minOccurs="0" nillable="true"/>
-							<!-- Premises ID -->
+							<!-- Other Designation including Lat Long or PIN/LID -->
 							<xsd:element name="XAD.8" type="xsd:string" minOccurs="0" nillable="true"/>
+							<!-- County -->
+							<xsd:element name="XAD.9" type="xsd:string" minOccurs="0" nillable="true"/>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
@@ -1083,7 +1097,7 @@ for all types of testing.
 										<xsd:element name="XAD.4" type="StateCode" minOccurs="0" nillable="true"/>
 										<!-- Zipcode -->
 										<xsd:element name="XAD.5" type="xsd:string" minOccurs="0" nillable="true"/>
-										<!-- Premises ID  -->
+										<!-- GPS Coordinates, Premises ID, etc.  -->
 										<xsd:element name="XAD.8" type="xsd:string" minOccurs="0" nillable="true"/>
 										<!-- County -->
 										<xsd:element name="XAD.9" type="xsd:string" minOccurs="0" nillable="true"/>
@@ -1339,7 +1353,7 @@ for all types of testing.
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Placer Assigned specimen id for specimen or pool -->
-										<xsd:element name="EI.1" minOccurs="1" maxOccurs="1" nillable="false">
+										<xsd:element name="EI.1" minOccurs="0" maxOccurs="1" nillable="false">
 											<xsd:simpleType>
 												<xsd:restriction base="nonNullString">
 													<xsd:maxLength value="32"/>
@@ -1436,7 +1450,7 @@ for all types of testing.
 							<!-- SNOMED text for specimen additive -->
 							<xsd:element name="CWE.2" type="xsd:string" minOccurs="0" nillable="true"/>
 							<!-- NAHLN Constant "SCT" -->
-							<xsd:element name="CWE.3" type="SCT" minOccurs="0" nillable="true"/>
+							<xsd:element name="CWE.3" type="SCTor371" minOccurs="0" nillable="true"/>
 							<!-- Alternate code for specimen additive-->
 							<xsd:element name="CWE.4" type="xsd:string" minOccurs="0" nillable="true"/>
 							<!-- Alternate text for specimen additive -->
@@ -1763,7 +1777,7 @@ for all types of testing.
 
 	<xsd:complexType name="SPECIMEN.OBX">
 		<xsd:sequence>
-			<!-- NAHLN constant "NM" -->
+			<!-- NAHLN constant "NM" But may vary in other uses. -->
 			<xsd:element name="OBX.2" type="nonNullString"/>
 			<xsd:element name="OBX.3">
 				<xsd:complexType>
@@ -1778,8 +1792,50 @@ for all types of testing.
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<!-- This number represents the number of specimens pooled to make up the identified specimen submitted in SPM -->
-			<xsd:element name="OBX.5" type="xsd:int"/>
+			<!-- Value of observation on Specimen Value -->
+			<xsd:element name="OBX.5" minOccurs="0" nillable="true">
+				<!-- Our definition of ANY because this may support various types of observations -->
+				<!-- mixed="true" allows for ST and NM types -->
+				<xsd:complexType mixed="true">
+					<xsd:sequence>
+						<!-- Comparator: =, <, <=, >, >= -->
+						<xsd:element name="SN.1" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Number 1 -->
+						<xsd:element name="SN.2" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Separator: :, -, etc.-->
+						<xsd:element name="SN.3" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Number 2 -->
+						<xsd:element name="SN.4" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Code -->
+						<xsd:element name="CWE.1" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Text -->
+						<xsd:element name="CWE.2" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Code System -->
+						<xsd:element name="CWE.3" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Alt Code -->
+						<xsd:element name="CWE.4" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Alt Text -->
+						<xsd:element name="CWE.5" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Alt Code System -->
+						<xsd:element name="CWE.6" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- Original Text -->
+						<xsd:element name="CWE.9" type="xsd:string" minOccurs="0" nillable="true"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!-- Units if applicable -->
+			<xsd:element name="OBX.6" minOccurs="0" nillable="true">
+				<xsd:complexType>
+					<xsd:sequence>
+						<!-- Units Code -->
+						<xsd:element name="CWE.1" type="nonNullString"/>
+						<!-- Units Text -->
+						<xsd:element name="CWE.2" type="xsd:string" minOccurs="0" nillable="true"/>
+						<!-- NAHLN constant "ISO" -->
+						<xsd:element name="CWE.3" type="ISO"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
 			<!-- NAHLN Constant "F" Only final results messaged -->
 			<xsd:element name="OBX.11">
 				<xsd:simpleType>
@@ -1933,7 +1989,7 @@ for all types of testing.
 							<xsd:element name="ORC.5" minOccurs="1" nillable="false">
 								<xsd:simpleType>
 									<xsd:restriction base="xsd:string">
-										<!--<xsd:enumeration value="A"/>-->
+										<xsd:enumeration value="A"/>
 										<!-- Some, but not all, results available -->
 										<!--<xsd:enumeration value="CA"/>-->
 										<!-- Order was canceled -->

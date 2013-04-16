@@ -737,10 +737,12 @@ for all types of testing.
 				<!-- Address 
 				     For the PREM role, this is the most epidemiologically significant location 
 				     of the source animal(s) expressed in either partial or complete address -->
+				<!-- Address: Note: this is a very loose constraint on XAD to allow
+				     sending of just State or just Other Designation, etc. -->
 				<xsd:element name="ROL.11" minOccurs="0" nillable="true">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xsd:element name="XAD.1">
+							<xsd:element name="XAD.1" minOccurs="0">
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Street Address -->
@@ -753,17 +755,13 @@ for all types of testing.
 							<!-- Other designation -->
 							<xsd:element name="XAD.2" type="xsd:string" minOccurs="0" nillable="true"/>
 							<!-- City -->
-							<xsd:element name="XAD.3" type="nonNullString"/>
+							<xsd:element name="XAD.3" type="nonNullString" minOccurs="0"/>
 							<!-- State (Two character abbreviation) -->
-							<xsd:element name="XAD.4" type="StateCode"/>
+							<xsd:element name="XAD.4" type="StateCode"  minOccurs="0"/>
 							<!-- Zipcode -->
-							<xsd:element name="XAD.5" type="nonNullString"/>
-							<!-- Country Code -->
-							<xsd:element name="XAD.6" type="xsd:string" minOccurs="0" nillable="true"/>
-							<!-- Premises ID (deprecated) or Lat-Long -->
+							<xsd:element name="XAD.5" type="nonNullString" minOccurs="0"/>
+							<!-- Premises ID for PREM role only -->
 							<xsd:element name="XAD.8" type="xsd:string" minOccurs="0" nillable="true"/>
-							<!-- County -->
-							<xsd:element name="XAD.9" type="xsd:string" minOccurs="0" nillable="true"/>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
@@ -930,7 +928,7 @@ for all types of testing.
 					</xsd:complexType>
 				</xsd:element>
 				<!-- Relationship -->
-				<xsd:element name="NK1.3">
+				<xsd:element name="NK1.3" minOccurs="0">
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- NAHLN default "OWN" -->

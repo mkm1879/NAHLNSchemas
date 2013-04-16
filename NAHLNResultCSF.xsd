@@ -860,7 +860,7 @@ but required for CSF.  It also may restrict some valid value lists.
 					</xsd:complexType>
 				</xsd:element>
 				<!-- Relationship -->
-				<xsd:element name="NK1.3">
+				<xsd:element name="NK1.3" minOccurs="0">
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- NAHLN default "OWN" -->

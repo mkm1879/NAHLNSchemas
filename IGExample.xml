@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<OPU_R25> 
+<MSH>
+	<MSH.1>|</MSH.1> 
+	<MSH.2>^~\&amp;</MSH.2> 
+	<MSH.3>
+		<HD.1>STRLMS</HD.1> 
+		<HD.2>2.16.840.1.113883.3.5.1.2</HD.2> 
+		<HD.3>ISO</HD.3> 
+	</MSH.3>
+	<MSH.4>
+		<HD.1>0031S8O</HD.1> 
+		<HD.2>2.16.840.1.113883.3.5.6.1.4</HD.2> 
+		<HD.3>ISO</HD.3> 
+	</MSH.4>
+	<MSH.6>	
+		<HD.1>987JF2O</HD.1>
+		<HD.2>2.16.840.1.113883.3.5.6.1.4</HD.2>
+		<HD.3>ISO</HD.3>
+	</MSH.6>
+	<MSH.7>200812190810-0800</MSH.7> 
+	<MSH.9>
+		<MSG.1>OPU</MSG.1> 
+		<MSG.2>R25</MSG.2> 
+		<MSG.3>OPU_R25</MSG.3> 
+	</MSH.9>
+	<MSH.10>1003456</MSH.10> 
+	<MSH.11>
+		<PT.1>P</PT.1> 
+	</MSH.11>
+	<MSH.12>
+		<VID.1>2.6</VID.1> 
+	</MSH.12>
+	<MSH.21>
+		<EI.1>NAHLNResultBaseV1_0_5</EI.1> 
+		<EI.3>2.16.840.1.113883.3.5.9</EI.3> 
+		<EI.4>ISO</EI.4> 
+	</MSH.21>
+</MSH>
+<PV1>
+	<PV1.2>C</PV1.2> 
+	<PV1.7>
+		<XCN.1>VET001</XCN.1> 
+		<XCN.2>
+			<FN.1>Vet</FN.1> 
+		</XCN.2>
+		<XCN.3>Joe</XCN.3> 
+		<XCN.4>B.</XCN.4> 
+		<XCN.9>
+			<HD.2>2.16.840.1.113883.3.5.1.2</HD.2> 
+			<HD.3>ISO</HD.3> 
+			</XCN.9>
+	</PV1.7>
+	<PV1.19>
+		<CX.1>D0800675</CX.1> 
+		<CX.4>
+			<HD.2>2.16.840.1.113883.3.5.1.2</HD.2> 
+			<HD.3>ISO</HD.3> 
+		</CX.4>
+	</PV1.19>
+	<PV1.51>V</PV1.51> 
+</PV1>
+<OBX>
+	<OBX.2>CWE</OBX.2> 
+	<OBX.3>
+		<CWE.1>29298-7</CWE.1> 
+		<CWE.2>Reason for Visit</CWE.2> 
+		<CWE.3>LN</CWE.3> 
+	</OBX.3>
+<OBX.5>
+		<CWE.1>S</CWE.1> 
+		<CWE.2>Surveillance</CWE.2> 
+		<CWE.3>	L</CWE.3> 
+	</OBX.5>
+	<OBX.11>F</OBX.11> 
+</OBX>
+<ROL>
+	<ROL.1>
+		<EI.1>232345</EI.1> 
+		<EI.3>2.16.840.1.113883.3.5.6.2</EI.3> 
+		<EI.4>ISO</EI.4> 
+	</ROL.1>
+	<ROL.2>UC</ROL.2> 
+	<ROL.3>
+		<CWE.1>SUB</CWE.1> 
+		<CWE.2>Submitter</CWE.2> 
+		<CWE.3>HL70443</CWE.3> 
+	</ROL.3>
+	<ROL.4>
+		<XCN.1>GIB001</XCN.1> 
+		<XCN.2>
+			<FN.1>Gibson</FN.1> 
+		</XCN.2>
+		<XCN.3>Henry</XCN.3> 
+		<XCN.4>T.</XCN.4> 
+		<XCN.5>Jr.</XCN.5> 
+		<XCN.9>
+			<HD.2>2.16.840.1.113883.3.5.1.2</HD.2> 
+			<HD.3>ISO</HD.3> 
+		</XCN.9>
+	</ROL.4>
+	<ROL.11>
+		<XAD.1>
+			<SAD.1>1234 Elm Street</SAD.1> 
+			<SAD.3>Apt 2A</SAD.3>
+		</XAD.1>
+		<XAD.2>Suite 111</XAD.2>
+		<XAD.3>Anytown</XAD.3> 
+		<XAD.4>CA</XAD.4> 
+		<XAD.5>99999-9999</XAD.5> 
+	</ROL.11>
+	<ROL.12>
+		<XTN.2>WPN</XTN.2> 
+		<XTN.3>PH</XTN.3> 
+		<XTN.6>888</XTN.6> 
+		<XTN.7>5552323</XTN.7> 
+		<XTN.8>4232</XTN.8> 
+	</ROL.12>
+	<ROL.13>
+		<PL.6>P</PL.6>
+		<PL.9>Second to the last farm on the road</PL.9>
+		<PL.10>	
+			<EI.1>000UDC0</EI.1>
+			<EI.3>2.16.840.1.113883.3.5.6.1.1</EI.3>
+			<EI.4>ISO</EI.4>
+		</PL.10>
+	</ROL.13>
+</ROL>
+<OPU_R25.ACCESSION_DETAIL>
+<NK1>
+	<NK1.1>1</NK1.1> 
+	<NK1.2>
+		<XPN.1>
+			<FN.1>Smith</FN.1> 
+		</XPN.1>
+		<XPN.2>John</XPN.2>
+		<XPN.3>Q.</XPN.3>
+		<XPN.4>Jr.</XPN.4>
+	</NK1.2>
+	<NK1.3>
+		<CWE.1>OWN</CWE.1> 
+		<CWE.2>Owner</CWE.2> 
+		<CWE.3>HL70063</CWE.3> 
+	</NK1.3>
+	<NK1.4>
+		<XAD.1>
+			<SAD.1>348735 Laguna Pl.</SAD.1> 
+		</XAD.1>
+		<XAD.3>Agtown</XAD.3> 
+		<XAD.4>CA</XAD.4> 
+		<XAD.5>95999</XAD.5> 
+	</NK1.4>
+	<NK1.5>
+		<XTN.2>PRN</XTN.2> 
+		<XTN.3>PH</XTN.3> 
+		<XTN.6>555</XTN.6> 
+		<XTN.7>4444444</XTN.7> 
+	</NK1.5>
+	<NK1.6>
+		<XTN.2>WPN</XTN.2> 
+		<XTN.3>PH</XTN.3> 
+		<XTN.6>555</XTN.6> 
+		<XTN.7>3333333</XTN.7> 
+	</NK1.6>
+	<NK1.13>
+		<XON.1>Fred's Free Range Feasants</XON.1>
+	</NK1.13>
+	<NK1.20>
+		<CWE.1>Eng</CWE.1> 
+		<CWE.2>English</CWE.2> 
+		<CWE.3>LISO639</CWE.3> 
+	</NK1.20>
+</NK1>
+<OPU_R25.PATIENT>
+<PID>
+	<PID.3>
+		<CX.1>Y_1234</CX.1> 
+	</PID.3>
+	<PID.5>
+		<XPN.1>
+			<FN.1>Not Provided</FN.1>
+		</XPN.1>
+	</PID.5>
+	<PID.7>200804</PID.7> 
+	<PID.8>X</PID.8> 
+	<PID.10>
+		<CWE.9>White</CWE.9> 
+	</PID.10>
+	<PID.29>200812051025-0800</PID.29> 
+	<PID.30>Y</PID.30> 
+	<PID.35>
+		<CWE.1>35839008</CWE.1> 
+		<CWE.2>Leghorn Chicken</CWE.2> 
+		<CWE.3>SCT</CWE.3> 
+		<CWE.4>CHI</CWE.4> 
+		<CWE.5>Chicken</CWE.5> 
+		<CWE.6>NAIS</CWE.6> 
+		<CWE.9>Backyard chicken</CWE.9> 
+	</PID.35>
+	<PID.37>DXL</PID.37>
+	<PID.38>
+		<CWE.1>LY</CWE.1>
+		<CWE.2>Layer</CWE.2> 
+		<CWE.3>HL70429</CWE.3>
+	</PID.38>
+</PID>
+<OPU_R25.PATIENT_OBSERVATION>
+<OBX>
+	<OBX.2>ST</OBX.2> 
+	<OBX.3>
+		<CWE.1>11329-0</CWE.1> 
+		<CWE.2>Patient History, Narrative</CWE.2> 
+		<CWE.3>LN</CWE.3> 
+	</OBX.3>
+	<OBX.5>Flock has sudden increase in mortality</OBX.5> 
+	<OBX.11>F</OBX.11> 
+</OBX>
+</OPU_R25.PATIENT_OBSERVATION>
+</OPU_R25.PATIENT>
+<OPU_R25.SPECIMEN>
+<SPM>
+	<SPM.2>
+		<EIP.1>
+			<EI.1>AHM2008000012</EI.1> 
+			<EI.3>2.16.840.1.113883.3.5.8.1.3</EI.3>
+			<EI.4>ISO</EI.4> 
+		</EIP.1>
+		<EIP.2>
+			<EI.1>D08050123.001</EI.1> 
+			<EI.3>2.16.840.1.113883.3.5.1.2</EI.3> 
+			<EI.4>ISO</EI.4> 
+		</EIP.2>
+	</SPM.2>
+	<SPM.4>
+		<CWE.1>661000009100</CWE.1> 
+		<CWE.2>Oropharyngeal swab</CWE.2> 
+		<CWE.3>SCT</CWE.3> 
+		<CWE.9>OP swabs</CWE.9> 
+	</SPM.4>
+	<SPM.6>
+		<CWE.1>VIRTM</CWE.1> 
+		<CWE.2>Viral transport Medium</CWE.2> 
+		<CWE.3>HL70371</CWE.3> 
+		<CWE.9>VTM</CWE.9> 
+	</SPM.6>
+	<SPM.11>
+		<CWE.1>P</CWE.1> 
+		<CWE.2>Patient</CWE.2> 
+		<CWE.3>HL70369</CWE.3> 
+	</SPM.11>
+<SPM.17>
+		<DR.1>200812050800-0800</DR.1> 
+	</SPM.17>
+	<SPM.18>200812061030-0800</SPM.18> 
+	<SPM.21>
+		<CWE.1>QS</CWE.1> 
+		<CWE.2>Quantity not sufficient</CWE.2> 
+		<CWE.3>HL70490</CWE.3> 
+		<CWE.9>Insufficent sample provided</CWE.9> 
+	</SPM.21>
+	<SPM.22>
+		<CWE.1>E</CWE.1> 
+		<CWE.2>Excellent</CWE.2> 
+		<CWE.3>HL70491</CWE.3> 
+	</SPM.22>
+	<SPM.23>
+		<CWE.1>A</CWE.1> 
+		<CWE.2>Appropriate</CWE.2> 
+		<CWE.3>HL70492</CWE.3> 
+	</SPM.23>
+	<SPM.24>
+		<CWE.1>COOL</CWE.1> 
+		<CWE.2>Cool</CWE.2> 
+		<CWE.3>HL70493</CWE.3> 
+	</SPM.24>
+	<SPM.27>
+		<CWE.9>Snap-cap tube</CWE.9> 
+	</SPM.27>
+</SPM>
+<OPU_R25.SPECIMEN_OBSERVATION>
+<OBX>
+	<OBX.2>NM</OBX.2> 
+	<OBX.3>
+		<CWE.1>42186-7</CWE.1> 
+		<CWE.2>Number Spec Recd XXX Qn</CWE.2> 
+		<CWE.3>LN</CWE.3> 
+	</OBX.3>
+	<OBX.5>5</OBX.5> 
+	<OBX.11>F</OBX.11> 
+</OBX>
+</OPU_R25.SPECIMEN_OBSERVATION>
+<OPU_R25.ORDER>
+<OBR>
+	<OBR.2>
+		<EI.1>42134213423</EI.1>
+		<EI.3>2.16.840.1.113883.3.5.1.2</EI.3>
+		<EI.4>ISO</EI.4>
+	</OBR.2>
+	<OBR.3>
+		<EI.1>123421341234</EI.1> 
+		<EI.3>2.16.840.1.113883.3.5.1.2</EI.3> 
+		<EI.4>ISO</EI.4> 
+	</OBR.3>
+	<OBR.4>
+		<CWE.1>44263-2</CWE.1> 
+		<CWE.2>FLUAV RNA XXX PCR-aCnc</CWE.2> 
+		<CWE.3>LN</CWE.3> 
+	</OBR.4>
+	<OBR.22>200812061234-0800</OBR.22> 
+</OBR>
+<ORC>
+	<ORC.1>SC</ORC.1> 
+	<ORC.4>
+		<EI.1>CAJTC2008454</EI.1> 
+		<EI.3>2.16.840.1.113883.3.5.8.4.1</EI.3> 
+		<EI.4>ISO</EI.4> 
+	</ORC.4>
+	<ORC.5>CM</ORC.5> 
+	<ORC.9>200812061356-0800</ORC.9> 
+	<ORC.10>
+		<XCN.1>CAS002</XCN.1> 
+		<XCN.9>
+			<HD.2>2.16.840.1.113883.3.5.1.2</HD.2> 
+			<HD.3>ISO</HD.3> 
+		</XCN.9>
+	</ORC.10>
+	<ORC.11>
+		<XCN.1>WIL012</XCN.1> 
+		<XCN.9>
+			<HD.2>2.16.840.1.113883.3.5.1.2</HD.2> 
+			<HD.3>ISO</HD.3> 
+		</XCN.9>
+	</ORC.11>
+</ORC>
+<OPU_R25.RESULT>
+<OBX>
+	<OBX.2>NM</OBX.2> 
+	<OBX.3>
+		<CWE.1>44263-2</CWE.1> 
+		<CWE.2>FLUAV RNA XXX PCR-aCnc</CWE.2> 
+		<CWE.3>LN</CWE.3> 
+	</OBX.3>
+	<OBX.5>0</OBX.5>
+	<OBX.8>NEG</OBX.8>
+	<OBX.11>F</OBX.11> 
+	<OBX.16>
+		<XCN.1>CAS012</XCN.1>
+ 		<XCN.2>
+			<FN.1>Case</FN.1>
+		</XCN.2>
+		<XCN.9>
+			<HD.2>2.16.840.1.113883.3.5.1.2</HD.2> 
+			<HD.3>ISO</HD.3> 
+		</XCN.9>
+	</OBX.16>
+	<OBX.17>
+		<CWE.1>2.2.16.840.1.113883.3.5.1.7.8.1.1.4</CWE.1> 
+		<CWE.2>NVSL AI Matrix PCR</CWE.2> 
+		<CWE.3>ISO</CWE.3> 
+	</OBX.17>
+	<OBX.19>200812061532-0800</OBX.19> 
+</OBX>
+</OPU_R25.RESULT>
+</OPU_R25.ORDER>
+</OPU_R25.SPECIMEN>
+</OPU_R25.ACCESSION_DETAIL>
+</OPU_R25>
+
+
