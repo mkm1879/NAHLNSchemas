@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ******* Version 1_0_6 of the NAHLN WS AI Result Schema ******* -->
+<!-- ******* Version 1_0_6_1 of the NAHLN WS AI Result Schema ******* -->
 <!--
 This is a refinement of the basic NAHLN result message schema.  It has been 
 customized for use in the Wildlife Services Avian Influenza (WS AI) surveillance program.  
@@ -7,6 +7,9 @@ It includes a small number of fields that are optional in the base schema
 but required for WS AI.  It also may restrict some valid value lists.
 
 This version adds "Unknown" as an acceptable enumaration value in PID.38
+ 
+ 4/26/2013 1_0_6_1 Removed incorrect length restrictions.
+
 -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:hl7="urn:hl7-org:v2xml">
 	<xsd:simpleType name="OID">
@@ -500,13 +503,7 @@ This version adds "Unknown" as an acceptable enumaration value in PID.38
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Insert Accession Number -->
-							<xsd:element name="CX.1">
-								<xsd:simpleType>
-									<xsd:restriction base="nonNullString">
-										<xsd:maxLength value="30"/>
-									</xsd:restriction>
-								</xsd:simpleType>
-							</xsd:element>
+							<xsd:element name="CX.1" type="nonNullString"/>
 							<xsd:element name="CX.4">
 								<xsd:complexType>
 									<xsd:sequence>
@@ -653,13 +650,7 @@ This version adds "Unknown" as an acceptable enumaration value in PID.38
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Last Name ("Not Applicable" for Premises) -->
-										<xsd:element name="FN.1">
-											<xsd:simpleType>
-												<xsd:restriction base="nonNullString">
-													<xsd:maxLength value="30"/>
-												</xsd:restriction>
-											</xsd:simpleType>
-										</xsd:element>
+										<xsd:element name="FN.1" type="nonNullString"/>
 									</xsd:sequence>
 								</xsd:complexType>
 							</xsd:element>
@@ -1366,13 +1357,7 @@ This version adds "Unknown" as an acceptable enumaration value in PID.38
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Placer Assigned specimen id for specimen or pool -->
-										<xsd:element name="EI.1" minOccurs="1" maxOccurs="1" nillable="false">
-											<xsd:simpleType>
-												<xsd:restriction base="nonNullString">
-													<xsd:maxLength value="32"/>
-												</xsd:restriction>
-											</xsd:simpleType>
-										</xsd:element>
+										<xsd:element name="EI.1" type="nonNullString" minOccurs="1" maxOccurs="1"/>
 										<!-- Text for placer ID system -->
 										<xsd:element name="EI.2" type="xsd:string" minOccurs="0" nillable="true"/>
 										<!-- Or Lab Constant either Lab OID or Lab OID for placer specimen IDs -->
@@ -1387,13 +1372,7 @@ This version adds "Unknown" as an acceptable enumaration value in PID.38
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Lab Assigned specimen id for specimen or pool -->
-										<xsd:element name="EI.1">
-											<xsd:simpleType>
-												<xsd:restriction base="nonNullString">
-													<xsd:maxLength value="20"/>
-												</xsd:restriction>
-											</xsd:simpleType>
-										</xsd:element>
+										<xsd:element name="EI.1" type="nonNullString"/>
 										<!-- Lab Constant either Lab OID or Lab OID for specimen IDs -->
 										<xsd:element name="EI.3" type="OID"/>
 										<!-- NAHLN Constant "ISO" -->
@@ -1554,7 +1533,7 @@ This version adds "Unknown" as an acceptable enumaration value in PID.38
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Start time used since collection is virtually instantaneous for our samples. YYYYMMDDHHMM-ZZZZ -->
-							<xsd:element name="DR.1" type="nonNullString"/>
+							<xsd:element name="DR.1" type="DateTime"/>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
@@ -1974,13 +1953,7 @@ This version adds "Unknown" as an acceptable enumaration value in PID.38
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Referral Number -->
-										<xsd:element name="EI.1" minOccurs="1" maxOccurs="1" nillable="false">
-											<xsd:simpleType>
-												<xsd:restriction base="nonNullString">
-													<xsd:maxLength value="32"/>
-												</xsd:restriction>
-											</xsd:simpleType>
-										</xsd:element>
+										<xsd:element name="EI.1" type="nonNullString" minOccurs="1" maxOccurs="1"/>
 										<!-- Referral Number Assigner OID
 											As a workable default for now assume all referral numbers
 											have been issued by the NAHLN so the OID is 

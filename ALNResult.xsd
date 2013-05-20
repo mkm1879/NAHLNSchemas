@@ -10,6 +10,9 @@ for all types of testing.
  <!-- 10/06/2010 - 1_0_7_0 Changes include:
  Update to OID regex to support CSF ELISA results
  Maintenance changes to the PID.38 enumerations to remain in sync with VTU Terminology 
+  
+ 4/26/2013 1_0_7_1 Removed incorrect length restrictions.
+
  -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:hl7="urn:hl7-org:v2xml">
 	<xsd:simpleType name="OID">
@@ -503,13 +506,7 @@ for all types of testing.
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Insert Accession Number -->
-							<xsd:element name="CX.1">
-								<xsd:simpleType>
-									<xsd:restriction base="xsd:string">
-										<xsd:maxLength value="30"/>
-									</xsd:restriction>
-								</xsd:simpleType>
-							</xsd:element>
+							<xsd:element name="CX.1" type="xsd:string"/>
 							<xsd:element name="CX.4">
 								<xsd:complexType>
 									<xsd:sequence>
@@ -528,13 +525,7 @@ for all types of testing.
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Insert Alternate Accession Number -->
-							<xsd:element name="CX.1">
-								<xsd:simpleType>
-									<xsd:restriction base="xsd:string">
-										<xsd:maxLength value="30"/>
-									</xsd:restriction>
-								</xsd:simpleType>
-							</xsd:element>
+							<xsd:element name="CX.1" type="xsd:string"/>
 							<xsd:element name="CX.4">
 								<xsd:complexType>
 									<xsd:sequence>
@@ -704,13 +695,7 @@ for all types of testing.
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Last Name ("Not Applicable" for Premises) -->
-										<xsd:element name="FN.1">
-											<xsd:simpleType>
-												<xsd:restriction base="nonNullString">
-													<xsd:maxLength value="30"/>
-												</xsd:restriction>
-											</xsd:simpleType>
-										</xsd:element>
+										<xsd:element name="FN.1" type="nonNullString"/>
 									</xsd:sequence>
 								</xsd:complexType>
 							</xsd:element>
@@ -1487,14 +1472,8 @@ for all types of testing.
 								<xsd:complexType>
 									<xsd:sequence>
 										<!-- Placer Assigned specimen id for specimen or pool -->
-										<xsd:element name="EI.1" minOccurs="1" maxOccurs="1" nillable="false">
-											<xsd:simpleType>
-												<xsd:restriction base="nonNullString">
-													<xsd:maxLength value="32"/>
-												</xsd:restriction>
-											</xsd:simpleType>
-										</xsd:element>
-										<!-- Text for placer ID system -->
+										<xsd:element name="EI.1" type="nonNullString" minOccurs="1" maxOccurs="1"/>
+												<!-- Text for placer ID system -->
 										<xsd:element name="EI.2" type="xsd:string" minOccurs="0" nillable="true"/>
 										<!-- Or Lab Constant either Lab OID or Lab OID for placer specimen IDs -->
 										<xsd:element name="EI.3" type="OID" minOccurs="0" nillable="true"/>
@@ -1682,7 +1661,7 @@ for all types of testing.
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Start time used since collection is virtually instantaneous for our samples. YYYYMMDDHHMM-ZZZZ -->
-							<xsd:element name="DR.1" type="nonNullString"/>
+							<xsd:element name="DR.1" type="DateTime"/>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
