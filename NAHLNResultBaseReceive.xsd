@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ******* Version 1_0_9_1 of the NAHLN Base Result Schema ******* -->
+<!-- ******* Version 1_0_9_2 of the NAHLN Base Result Schema ******* -->
 <!--
 This is the basic schema for all NAHLN laboratory results messages.  
 It includes all fields that we anticipate needing in any of the disease 
@@ -13,7 +13,8 @@ for all types of testing.
  May expand enumeration of Reason for Testing (TBD) 
  
  4/26/2013 1_0_9_1 Removed incorrect length restrictions.
- -->
+ 5/20/2013 1_0_9_2 Fixed SPM.17/DR.1 Type
+-->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:hl7="urn:hl7-org:v2xml">
 	<xsd:simpleType name="OID">
 		<xsd:restriction base="xsd:string">
